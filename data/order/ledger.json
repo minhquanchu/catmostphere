@@ -1,0 +1,27 @@
+{
+    "balance": {
+        "revenue": 8
+    },
+    "receipts": [
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 2
+                },
+                "item-3": {
+                    "price": 3,
+                    "quantity": 1
+                }
+            },
+            "note": "this is a note",
+            "time": "1:12 Tue 19/4/2022",
+            "total": 8
+        }
+    ]
+}

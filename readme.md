@@ -4,7 +4,7 @@ A management software for small coffee shop
 ## Basic introduction
 - The program used a simplified MVC (model-view-controller) model
 | Section    |  Functional Duty                                |
-|------------|-------------------------------------------------|
+| ---------- | ----------------------------------------------- |
 | model      | handling the business logic and modify the data |
 | view       | handling the end user I/O and interface         |
 | controller | acting as the bridge between the other two      | 

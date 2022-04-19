@@ -1,1 +1,2 @@
-Run python3 src/controller.py to start the program
+# Catmostphere
+A management software for small coffee shop

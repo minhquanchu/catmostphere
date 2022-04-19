@@ -1,6 +1,6 @@
 {
     "balance": {
-        "revenue": 11
+        "revenue": 23
     },
     "receipts": [
         {
@@ -37,6 +37,70 @@
             },
             "note": null,
             "time": "14:55 Tue 19/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "21:46 Tue 19/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "21:48 Tue 19/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "21:50 Tue 19/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "21:50 Tue 19/4/2022",
             "total": 3
         }
     ]

@@ -4,7 +4,16 @@ from typing import List
 from model.utils import getDBPath, now
 
 def getMenu() -> dict:
-    pass
+    """
+    Return the menu dictionary
+    """
+    path = getDBPath() + '/order/menu.json'
+    try: 
+        with open(path, 'r') as openFile:
+            menu: dict = json.load(openFile)
+        return menu
+    except:
+        raise Exception('failed to get menu, menu.json is missing')
 
 def getInvoice(cashier: str, order: List[str], note: str = None, discount: int = 0) -> dict:
     """

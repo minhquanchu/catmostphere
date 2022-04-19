@@ -1,5 +1,5 @@
 # Catmostphere
-A management software for small coffee shop
+A management software for small coffee shop (I just like this name so nothing else)
 
 ## Basic introduction
 - The program used a simplified MVC (model-view-controller) model ([Check out this link for more](https://www.freecodecamp.org/news/model-view-controller-mvc-explained-through-ordering-drinks-at-the-bar-efcba6255053/))

@@ -1,14 +1,19 @@
 import json
 from typing import List
 
-from model.utils import now
+from model.utils import getDBPath, now
 
 def getMenu() -> dict:
     pass
 
-def getInvoice(dir: str, cashier: str, order: List[str], note: str = None,discount: int = 0) -> dict:
+def getInvoice(cashier: str, order: List[str], note: str = None, discount: int = 0) -> dict:
+    """
+    Return an invoice dictionary according to order(Side note: invoice is issued before the customer complete the purchase)
+    Optional paramteter discount updates the total by subtracting the discount percentage (dicount takes value from 0: 0% -> 1: 100% ) 
+    """
+    path = getDBPath() + '/order/menu.json'
     try:
-        with open(f'{dir}/menu.json', 'r') as openFile:
+        with open(path, 'r') as openFile:
             menu: dict = json.load(openFile)
         invoice = {
             'time': now(),
@@ -20,8 +25,8 @@ def getInvoice(dir: str, cashier: str, order: List[str], note: str = None,discou
         for item in order:
             invoice['total'] += (1 - discount)*menu[item]['price']
             """
-            Update quanity of order items
-            if an item is not in the receipt yet set quantity to 1
+            Update quanity of order items (side note: if you set dict[key] = value, it just reassigns with the new value instead of updating it)
+            if an item is not in the receipt yet set quantity to 1 
             else increment quantity by 1
             """
             if item in invoice['items'].keys():
@@ -35,11 +40,16 @@ def getInvoice(dir: str, cashier: str, order: List[str], note: str = None,discou
     except:
         raise Exception('failed to get invoice, menu.json is missing')
 
-def updateLedger(dir: str, receipt: dict) -> bool:
+def updateLedger(receipt: dict) -> bool:
+    """
+    Add the receipt to ledger and update the revenue (side note: receipt is the same as invoice but after the completion of the order)
+    Raise an expection if ledger.json is missing
+    """
+    path = getDBPath() + "/order/ledger.json"
     try:
-        with open(f'{dir}/ledger.json', 'r') as openFile:
+        with open(path, 'r') as openFile:
             ledger = json.load(openFile)
-        with open(f'{dir}/ledger.json', 'w') as openFile:
+        with open(path, 'w') as openFile:
             ledger['receipts'].append(receipt)
             ledger['balance']['revenue'] += receipt['total']
             json.dump(ledger, openFile, indent = 4, sort_keys = True)

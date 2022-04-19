@@ -1,6 +1,6 @@
 {
     "balance": {
-        "revenue": 8
+        "revenue": 11
     },
     "receipts": [
         {
@@ -22,6 +22,22 @@
             "note": "this is a note",
             "time": "1:12 Tue 19/4/2022",
             "total": 8
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "14:55 Tue 19/4/2022",
+            "total": 3
         }
     ]
 }

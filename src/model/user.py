@@ -1,14 +1,16 @@
 import json
-from unicodedata import name
+
+from model.utils import getDBPath
 
 
 class User(dict):
-    def __init__(self, username: str, password: str = None, dir: str = None) -> None:
-        self._dir: str = dir    
+    def __init__(self, username: str, password: str = None) -> None:
         self._username = username
+        self._dir: str = getDBPath() + f'/users/{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
+        print('hello')
         self._user: dict = {
             'name': self.name,
             'password': self._password
@@ -49,9 +51,22 @@ class User(dict):
     def admin(self) -> bool:
         return self._admin
 
+        
+    @property
+    def username(self):
+        return self._username
+    
+    @property
+    def user(self) -> dict:
+        return self._user
+
     def verifier(self, password: str = None) -> bool:
+        """
+        verify user login to gain access <username>.json. The optional password is used to authorize access when you want to update user
+        Exception is raised if user is not registered in the database (OSError)
+        """
         try:
-            with open(f'{self._dir}/{self._username}.json', 'r') as openFile:
+            with open(self.path, 'r') as openFile:
                 user = json.load(openFile)
                 if password == user['password']:
                     return True
@@ -62,16 +77,11 @@ class User(dict):
                 return False
         except OSError:
             raise Exception(f'validation failed, username {self._username} does not exist')
-    
-    @property
-    def username(self):
-        return self._username
-    
-    @property
-    def user(self) -> dict:
-        return self._user
 
     def update(self) -> bool:
+        """
+        Update user info to <username>.json
+        """
         try:
             with open(f'{self.dir}/{self.username}.json', 'w') as openFile:
                 json.dump(self.user, openFile, indent = 4, sort_keys = True)

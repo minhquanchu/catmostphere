@@ -1,0 +1,1 @@
+Run python3 src/controller.py to start the program

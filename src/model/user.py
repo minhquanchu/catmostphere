@@ -11,10 +11,6 @@ class User(dict):
         self._admin: bool = None
         self._name: str = None
         print('hello')
-        self._user: dict = {
-            'name': self.name,
-            'password': self._password
-        }
         try:
             self._verified = self.verifier()
             self._registered = True
@@ -58,7 +54,10 @@ class User(dict):
     
     @property
     def user(self) -> dict:
-        return self._user
+        return {
+            'name': self.name,
+            'password': self._password
+        }
 
     def verifier(self, password: str = None) -> bool:
         """

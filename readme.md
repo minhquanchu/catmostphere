@@ -11,3 +11,6 @@ A management software for small coffee shop (I just like this name so nothing el
 | view       | handling the end user I/O and interface         |
 | controller | acting as the bridge between the other two      |
 
+## Packages
+- tkinter
+- screeninfo

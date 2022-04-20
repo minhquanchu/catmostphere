@@ -6,13 +6,12 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._path: str = getDBPath() + f'\\users\\{self._username}.json'           
+        self._path: str = getDBPath('users') + f'{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
         try:
             self._verified = self.verifier()
-            print(self.verifier())
             self._registered = True
         except Exception:
             self._verified = False

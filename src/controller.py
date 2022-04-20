@@ -12,4 +12,6 @@ def login() -> User:
     return None
 
 if __name__ == '__main__':
-    print('hello')
+    account = login()
+    if account != None:
+        print(order.getInvoice('another-test-user',['item-1','item-10','item-7']))

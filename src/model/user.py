@@ -6,7 +6,7 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._dir: str = getDBPath() + f'/users/{self._username}.json'           
+        self._dir: str = getDBPath() + f'\\users\\{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
@@ -83,7 +83,7 @@ class User(dict):
         Update user info to <username>.json
         """
         try:
-            with open(f'{self.dir}/{self.username}.json', 'w') as openFile:
+            with open(self.path, 'w') as openFile:
                 json.dump(self.user, openFile, indent = 4, sort_keys = True)
                 return True
         except OSError:

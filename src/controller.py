@@ -1,7 +1,7 @@
 from model import utils
 from model.user import User
 from model import order
-
+import tkinter as tk
 
 def login() -> User:
     username = input('Please enter username: ')
@@ -16,3 +16,5 @@ if __name__ == '__main__':
     newOrder = order.getInvoice('test-user', ['item-1', 'item-2'])
     order.updateLedger(newOrder)
     print(order.getMenu())
+    #window = tk.Tk()
+    

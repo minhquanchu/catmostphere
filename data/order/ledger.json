@@ -1,6 +1,6 @@
 {
     "balance": {
-        "revenue": 23
+        "revenue": 83
     },
     "receipts": [
         {
@@ -101,6 +101,326 @@
             },
             "note": null,
             "time": "21:50 Tue 19/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:8 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:9 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:11 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:11 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:18 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:19 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:23 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:24 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:24 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:32 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:35 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:37 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:38 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:38 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:38 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:38 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:40 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:58 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "9:58 Wed 20/4/2022",
+            "total": 3
+        },
+        {
+            "cashier": "test-user",
+            "items": {
+                "item-1": {
+                    "price": 1,
+                    "quantity": 1
+                },
+                "item-2": {
+                    "price": 2,
+                    "quantity": 1
+                }
+            },
+            "note": null,
+            "time": "10:2 Wed 20/4/2022",
             "total": 3
         }
     ]

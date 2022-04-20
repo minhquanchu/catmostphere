@@ -36,7 +36,6 @@ def getDBPath(dir: str) -> str:
     Return the absolute path <dir> in data
     """
     osName = platform.system()
-    print(osName)
     slash = ''
     if osName in ['Linux', 'Darwin']:
         slash = '/'

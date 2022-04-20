@@ -1,5 +1,6 @@
 from datetime import datetime
 from pathlib import Path
+import platform
 from random import choice
 from string import ascii_lowercase, ascii_uppercase
 
@@ -30,14 +31,22 @@ def now() -> str:
     }
     return f'{time.hour}:{time.minute} {weekday[date.weekday()].capitalize()} {date.day}/{date.month}/{date.year}'
 
-def getDBPath() -> str:
+def getDBPath(dir: str) -> str:
     """
-    Return the absolute path from the scripting file to the data dir
+    Return the absolute path <dir> in data
     """
-    dirPathList = str(Path.cwd()).split('/')
+    osName = platform.system()
+    slash = ''
+    if osName in ['Linux', 'Darwin']:
+        slash = '/'
+    elif osName == 'Windows':
+        slash = '\\'
+    dirPathList = str(Path.cwd()).split(f'{slash}')
     projectIndex = dirPathList.index('catmostphere') + 1
-    absPath = '/'.join(dirPathList[0:projectIndex])
-    return f'{absPath}/data'
+    absPath = f'{slash}'.join(dirPathList[0:projectIndex])
+    return f'{absPath}{slash}data{slash}{dir}{slash}'
+
+
 
 
 

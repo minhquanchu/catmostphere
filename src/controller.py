@@ -14,9 +14,4 @@ def login() -> User:
 if __name__ == '__main__':
     account = login()
     if account != None:
-        account.name = input('Please enter new name: ')
-        account.update()
-        print(account.user)
-    else:
-        print('wrong password')
-    
+        print(order.getInvoice('another-test-user',['item-1','item-10','item-7']))

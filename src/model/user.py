@@ -6,19 +6,31 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._path: str = getDBPath() + f'/users/{self._username}.json'           
+        self._path: str = getDBPath('users') + f'{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
-        #try:
-        self._verified = self.verifier()
-        self._registered = True
-        #except Exception:
-        #    self._verified = False
-        #    self._registered = False 
+        try:
+            self._verified = self.verifier()
+            self._registered = True
+        except Exception:
+            self._verified = False
+            self._registered = False 
 
     def __str__(self):
         return f'This is the account of {self._username}'
+
+    @property
+    def user(self) -> dict:
+        return {
+            'name': self.name,
+            'password': self.password,
+            'admin': self.admin
+        }
+    
+    @property
+    def password(self) -> str:
+        return self._password
 
     @property
     def verified(self) -> bool:
@@ -50,18 +62,6 @@ class User(dict):
     @property
     def username(self):
         return self._username
-
-    @property
-    def password(self) -> str:
-        return self._password
-
-    @property
-    def user(self) -> dict:
-        return {
-            'name': self.name,
-            'password': self.password,
-            'admin': self.admin
-        }
 
     def verifier(self, password: str = None) -> bool:
         """

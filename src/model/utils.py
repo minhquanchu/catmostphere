@@ -34,10 +34,10 @@ def getDBPath() -> str:
     """
     Return the absolute path from the scripting file to the data dir
     """
-    dirPathList = str(Path.cwd()).split('\\')
+    dirPathList = str(Path.cwd()).split('/')
     projectIndex = dirPathList.index('catmostphere') + 1
-    absPath = '\\'.join(dirPathList[0:projectIndex])
-    return f'{absPath}\\data'
+    absPath = '/'.join(dirPathList[0:projectIndex])
+    return f'{absPath}/data'
 
 
 

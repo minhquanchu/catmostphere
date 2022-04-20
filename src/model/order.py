@@ -7,7 +7,7 @@ def getMenu() -> dict:
     """
     Return the menu dictionary
     """
-    path = getDBPath() + '\\order\\menu.json'
+    path = getDBPath() + '/order/menu.json'
     try: 
         with open(path, 'r') as openFile:
             menu: dict = json.load(openFile)
@@ -20,7 +20,7 @@ def getInvoice(cashier: str, order: List[str], note: str = None, discount: int =
     Return an invoice dictionary according to order(Side note: invoice is issued before the customer complete the purchase)
     Optional paramteter discount updates the total by subtracting the discount percentage (dicount takes value from 0: 0% -> 1: 100% ) 
     """
-    path = getDBPath() + '\\order\\menu.json'
+    path = getDBPath() + '/order/menu.json'
     try:
         with open(path, 'r') as openFile:
             menu: dict = json.load(openFile)
@@ -54,7 +54,7 @@ def updateLedger(receipt: dict) -> bool:
     Add the receipt to ledger and update the revenue (side note: receipt is the same as invoice but after the completion of the order)
     Raise an expection if ledger.json is missing
     """
-    path = getDBPath() + "\\order\\ledger.json"
+    path = getDBPath() + "/order/ledger.json"
     try:
         with open(path, 'r') as openFile:
             ledger = json.load(openFile)

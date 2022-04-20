@@ -6,7 +6,7 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._dir: str = getDBPath() + f'\\users\\{self._username}.json'           
+        self._dir: str = getDBPath() + f'/users/{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None

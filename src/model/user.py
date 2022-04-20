@@ -6,17 +6,13 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._dir: str = getDBPath() + f'/users/{self._username}.json'           
+        self._path: str = getDBPath() + f'\\users\\{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
-        print('hello')
-        self._user: dict = {
-            'name': self.name,
-            'password': self._password
-        }
         try:
             self._verified = self.verifier()
+            print(self.verifier())
             self._registered = True
         except Exception:
             self._verified = False
@@ -26,17 +22,29 @@ class User(dict):
         return f'This is the account of {self._username}'
 
     @property
+    def user(self) -> dict:
+        return {
+            'name': self.name,
+            'password': self.password,
+            'admin': self.admin
+        }
+    
+    @property
+    def password(self) -> str:
+        return self._password
+
+    @property
     def verified(self) -> bool:
         return self._verified
 
     @property
-    def dir(self) -> str:
-        return self._dir
+    def path(self) -> str:
+        return self._path
         
     
-    @dir.setter
-    def dir(self, dir: str) -> None:
-        self._dir = dir
+    @path.setter
+    def path(self, path: str) -> None:
+        self._path = path
     
     @property
     def name(self) -> str:
@@ -55,10 +63,6 @@ class User(dict):
     @property
     def username(self):
         return self._username
-    
-    @property
-    def user(self) -> dict:
-        return self._user
 
     def verifier(self, password: str = None) -> bool:
         """
@@ -83,7 +87,7 @@ class User(dict):
         Update user info to <username>.json
         """
         try:
-            with open(f'{self.dir}/{self.username}.json', 'w') as openFile:
+            with open(self.path, 'w') as openFile:
                 json.dump(self.user, openFile, indent = 4, sort_keys = True)
                 return True
         except OSError:

@@ -12,7 +12,13 @@ def login() -> User:
     return None
 
 if __name__ == '__main__':
-    user = login()
-    newOrder = order.getInvoice('test-user', ['item-1', 'item-2'])
-    order.updateLedger(newOrder)
-    print(order.getMenu())
+    account = login()
+    if account != None:
+        account.name = input('Please enter new name: ')
+        print(account.name)
+        print(account.password)
+        print(account.admin)
+        print(account.user)
+        account.update()
+    else:
+        print('wrong password')

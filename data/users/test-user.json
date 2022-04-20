@@ -1,5 +1,5 @@
 {
-    "name": "test-name",
-    "password": "password",
-    "admin": false
+    "admin": false,
+    "name": "quan chu",
+    "password": "password"
 }

@@ -6,17 +6,16 @@ from model.utils import getDBPath
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._dir: str = getDBPath() + f'/users/{self._username}.json'           
+        self._path: str = getDBPath() + f'/users/{self._username}.json'           
         self._password = password
         self._admin: bool = None
         self._name: str = None
-        print('hello')
-        try:
-            self._verified = self.verifier()
-            self._registered = True
-        except Exception:
-            self._verified = False
-            self._registered = False 
+        #try:
+        self._verified = self.verifier()
+        self._registered = True
+        #except Exception:
+        #    self._verified = False
+        #    self._registered = False 
 
     def __str__(self):
         return f'This is the account of {self._username}'
@@ -26,13 +25,13 @@ class User(dict):
         return self._verified
 
     @property
-    def dir(self) -> str:
-        return self._dir
+    def path(self) -> str:
+        return self._path
         
     
-    @dir.setter
-    def dir(self, dir: str) -> None:
-        self._dir = dir
+    @path.setter
+    def path(self, path: str) -> None:
+        self._path = path
     
     @property
     def name(self) -> str:
@@ -51,12 +50,17 @@ class User(dict):
     @property
     def username(self):
         return self._username
-    
+
+    @property
+    def password(self) -> str:
+        return self._password
+
     @property
     def user(self) -> dict:
         return {
             'name': self.name,
-            'password': self._password
+            'password': self.password,
+            'admin': self.admin
         }
 
     def verifier(self, password: str = None) -> bool:
@@ -64,11 +68,13 @@ class User(dict):
         verify user login to gain access <username>.json. The optional password is used to authorize access when you want to update user
         Exception is raised if user is not registered in the database (OSError)
         """
+        print(self.path)
         try:
             with open(self.path, 'r') as openFile:
                 user = json.load(openFile)
                 if password == user['password']:
                     return True
+                print(self._password == user['password'])
                 if self._password == user['password']:
                     self._name = user['name']
                     self._admin = user['admin']

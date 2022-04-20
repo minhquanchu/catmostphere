@@ -12,9 +12,11 @@ def login() -> User:
     return None
 
 if __name__ == '__main__':
-    user = login()
-    newOrder = order.getInvoice('test-user', ['item-1', 'item-2'])
-    order.updateLedger(newOrder)
-    print(order.getMenu())
-    #window = tk.Tk()
+    account = login()
+    if account != None:
+        account.name = input('Please enter new name: ')
+        account.update()
+        print(account.user)
+    else:
+        print('wrong password')
     

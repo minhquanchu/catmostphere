@@ -17,7 +17,7 @@ def getMenu() -> dict:
 
 def getInvoice(cashier: str, order: List[str], note: str = None, discount: int = 0) -> dict:
     """
-    Return an invoice dictionary according to order(Side note: invoice is issued before the customer complete the purchase)
+    Return an invoice dictionary according to order(Susernamee note: invoice is issued before the customer complete the purchase)
     Optional paramteter discount updates the total by subtracting the discount percentage (dicount takes value from 0: 0% -> 1: 100% ) 
     """
     path = getDBPath('order') + 'menu.json'
@@ -34,7 +34,7 @@ def getInvoice(cashier: str, order: List[str], note: str = None, discount: int =
         for item in order:
             invoice['total'] += (1 - discount)*menu[item]['price']
             """
-            Update quanity of order items (side note: if you set dict[key] = value for an existing key, it just reassigns with the new value instead of updating it)
+            Update quanity of order items (susernamee note: if you set dict[key] = value for an existing key, it just reassigns with the new value instead of updating it)
             if an item is not in the receipt yet set quantity to 1 
             else increment quantity by 1
             """
@@ -51,17 +51,28 @@ def getInvoice(cashier: str, order: List[str], note: str = None, discount: int =
 
 def updateLedger(receipt: dict) -> bool:
     """
-    Add the receipt to ledger and update the revenue (side note: receipt is the same as invoice but after the completion of the order)
-    Raise an expection if ledger.json is missing
+    Update revenue and items sale in ledger(susernamee note: receipt is the same as invoice but after the completion of the order)
+    Raise an expection if ledger.jsonis missing
     """
-    path = getDBPath('order') + "ledger.json"
-    try:
-        with open(path, 'r') as openFile:
-            ledger = json.load(openFile)
-        with open(path, 'w') as openFile:
-            ledger['receipts'].append(receipt)
-            ledger['balance']['revenue'] += receipt['total']
-            json.dump(ledger, openFile, indent = 4, sort_keys = True)
-    except:
-        raise Exception('failed to update ledger, ledger.json is missing')  
-
+    ledgerPath = getDBPath('ledger') + "ledger.json"
+#    try:
+    with open(ledgerPath, 'r') as openFile:
+        ledger = json.load(openFile)
+    with open(ledgerPath, 'w') as openFile:
+        for item in receipt['items']:
+            ledger['items-sale'][item] += 1 
+        ledger['revenue'] += receipt['total']
+        json.dump(ledger, openFile, indent = 4, sort_keys = True)
+#    except:
+#        raise Exception('failed to update ledger, ledger.json is missing') 
+    
+def updateReceipt(receipt: dict) -> bool:
+    """
+    Create an receipt file in the format <cashier>-<hour>:<minute>-<day>/<month>/<year>
+    """
+    receiptPath = getDBPath('receipts') + f"{receipt['cashier']}-{receipt['time']['hour']}h-{receipt['time']['minute']}m-{receipt['time']['day']}-{receipt['time']['month']}-{receipt['time']['year']}.json"
+    #try:
+    with open(receiptPath, 'x') as openFile:
+        json.dump(receipt, openFile, indent = 4, sort_keys = True)
+    #except:
+    #    print(receiptPath)

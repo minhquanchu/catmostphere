@@ -84,7 +84,7 @@ class User(dict):
                     return True
                 return False
         except OSError:
-            raise Exception(f'validation failed, username {self._username} does not exist')
+            raise Exception(f'valusernameation failed, username {self._username} does not exist')
 
     def update(self) -> bool:
         """
@@ -97,5 +97,5 @@ class User(dict):
         except OSError:
             raise Exception(f'update failed, username {self.username} does not exist')
 
-     
-
+    def updateWorklog(self) -> bool:
+        pass 

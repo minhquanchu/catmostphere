@@ -68,13 +68,11 @@ class User(dict):
         verify user login to gain access <username>.json. The optional password is used to authorize access when you want to update user
         Exception is raised if user is not registered in the database (OSError)
         """
-        print(self.path)
         try:
             with open(self.path, 'r') as openFile:
                 user = json.load(openFile)
                 if password == user['password']:
                     return True
-                print(self._password == user['password'])
                 if self._password == user['password']:
                     self._name = user['name']
                     self._admin = user['admin']

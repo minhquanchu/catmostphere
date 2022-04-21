@@ -63,4 +63,5 @@ def updateLedger(receipt: dict) -> bool:
             ledger['balance']['revenue'] += receipt['total']
             json.dump(ledger, openFile, indent = 4, sort_keys = True)
     except:
-        raise Exception('failed to update ledger, ledger.json is missing')
+        raise Exception('failed to update ledger, ledger.json is missing')  
+

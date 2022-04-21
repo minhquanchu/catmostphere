@@ -14,13 +14,13 @@ def rString(int: len = 8, lowercase: bool = True, uppercase: bool = True, digits
         string += choice(f'{ascii_lowercase}{ascii_uppercase}{digits}')
     return string
 
-def now() -> str:
+def now() -> dict:
     """
-    Return current time in string format (e.g 11:23 1/4/2022)
+    Return current time in dict format {'hour': int, 'minute': int, 'weekday': str, 'day': int, 'month': str, 'year': int}
     """
     time = datetime.now().time()
     date = datetime.now().date()
-    weekday = {
+    weekdays = {
         0: 'mon',
         1: 'tue',
         2: 'wed',
@@ -29,8 +29,28 @@ def now() -> str:
         5: 'sat',
         6: 'sun'
     }
-    return f'{time.hour}:{time.minute} {weekday[date.weekday()].capitalize()} {date.day}/{date.month}/{date.year}'
-
+    months = {
+        1: 'jan',
+        2: 'feb',
+        3: 'march',
+        4: 'april',
+        5: 'may',
+        6: 'june',
+        7: 'july',
+        8: 'aug',
+        9: 'dec',
+        10: 'oct',
+        11: 'nov',
+        12: 'dec'
+    }
+    return {
+        'hour': time.hour,
+        'minute': time.minute,
+        'weekday': weekdays[date.weekday()],
+        'day': date.day,
+        'month': months[date.month],
+        'year': date.year
+    }
 def getDBPath(dir: str) -> str:
     """
     Return the absolute path <dir> in data

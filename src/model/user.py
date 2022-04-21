@@ -1,6 +1,6 @@
 import json
 
-from model.utils import getDBPath
+from model.utils import getDBPath, now
 
 
 class User(dict):
@@ -16,6 +16,7 @@ class User(dict):
         except Exception:
             self._verified = False
             self._registered = False 
+        self._checkin = now()
 
     def __str__(self):
         return f'This is the account of {self._username}'
@@ -28,6 +29,19 @@ class User(dict):
             'admin': self.admin
         }
     
+    @property
+    def checkin(self) -> dict:
+        return self._checkin
+
+    @property
+    def admin(self) -> bool:
+        return self._admin
+
+        
+    @property
+    def username(self):
+        return self._username
+
     @property
     def password(self) -> str:
         return self._password
@@ -53,15 +67,6 @@ class User(dict):
     @name.setter
     def name(self, name: str) -> None:
         self._name = name
-    
-    @property
-    def admin(self) -> bool:
-        return self._admin
-
-        
-    @property
-    def username(self):
-        return self._username
 
     def verifier(self, password: str = None) -> bool:
         """

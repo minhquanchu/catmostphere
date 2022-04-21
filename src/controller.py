@@ -1,7 +1,6 @@
 from model import utils
 from model.user import User
 from model import order
-import tkinter as tk
 
 def login() -> User:
     username = input('Please enter username: ')
@@ -13,5 +12,8 @@ def login() -> User:
 
 if __name__ == '__main__':
     account = login()
+    print('')
     if account != None:
-        print(order.getInvoice('another-test-user',['item-1','item-10','item-7']))
+        print(order.getInvoice('another-test-user',['item-1','item-10','item-7'])['items'])
+        print(account.checkin) 
+    print(utils.now())

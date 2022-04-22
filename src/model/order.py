@@ -17,7 +17,7 @@ def getMenu() -> dict:
 
 def getInvoice(cashier: str, order: List[str], note: str = None, discount: int = 0) -> dict:
     """
-    Return an invoice dictionary according to order(Susernamee note: invoice is issued before the customer complete the purchase)
+    Return an invoice dictionary according to order( note: invoice is issued before the customer complete the purchase)
     Optional paramteter discount updates the total by subtracting the discount percentage (dicount takes value from 0: 0% -> 1: 100% ) 
     """
     path = getDBPath('order') + 'menu.json'

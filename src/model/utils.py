@@ -44,7 +44,6 @@ def now() -> dict:
         12: 'dec'
     }
     return {
-        'time': f'{date.day}/{date.month}/{date.year}-{time.hour}:{time.minute}',
         'hour': time.hour,
         'minute': time.minute,
         'weekday': weekdays[date.weekday()],

@@ -20,6 +20,7 @@ def logout(accountInstance: User) -> None:
 
 if __name__ == '__main__':
     accountInstance = login()
+    print('')
     if accountInstance != None:
         invoice = getInvoice(accountInstance.name, ['item-1', 'item-2', 'item-4'])
         updateLedger(invoice)

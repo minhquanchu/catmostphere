@@ -2,6 +2,7 @@ from model.order import getInvoice, updateLedger, updateReceipt
 from model.user import User
 
 def login() -> User:
+    """Create an username using user's input. If the user exists, return User instance, else return None"""
     username = input('Please enter username: ')
     password = input('Please enter password: ')
     user: User = User(username, password = password)
@@ -23,6 +24,7 @@ if __name__ == '__main__':
     print('')
     if accountInstance != None:
         invoice = getInvoice(accountInstance.name, ['item-1', 'item-2', 'item-4'])
+        print(invoice)
         updateLedger(invoice)
         updateReceipt(invoice)
     

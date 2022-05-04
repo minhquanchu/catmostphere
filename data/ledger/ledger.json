@@ -1,15 +1,15 @@
 {
     "items-sale": {
-        "item-1": 9,
-        "item-10": 0,
-        "item-2": 9,
-        "item-3": 0,
-        "item-4": 9,
-        "item-5": 0,
-        "item-6": 0,
-        "item-7": 0,
-        "item-8": 0,
-        "item-9": 0
+        "Americano": 0,
+        "Black coffee": 0,
+        "Cappuccino": 2,
+        "Expresso": 8,
+        "Green tea": 3,
+        "Iced tea": 5,
+        "Latte": 5,
+        "Macchiato": 5,
+        "Matcha": 4,
+        "Sunflower Seeds": 0
     },
-    "revenue": 63
+    "revenue": 126.5
 }

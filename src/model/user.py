@@ -6,7 +6,7 @@ from model.utils import getDBPath, now
 class User(dict):
     def __init__(self, username: str, password: str = None) -> None:
         self._username = username
-        self._path: str = getDBPath('users') + f'{self._username}.json'           
+        self._path: str = getDBPath('users') + f'{self._username}.json'
         self._password = password
         self._admin: bool = None
         self._name: str = None
@@ -15,7 +15,7 @@ class User(dict):
             self._registered = True
         except Exception:
             self._verified = False
-            self._registered = False 
+            self._registered = False
         self._checkin = now()
 
     def __str__(self):
@@ -28,7 +28,7 @@ class User(dict):
             'password': self.password,
             'admin': self.admin
         }
-    
+
     @property
     def checkin(self) -> dict:
         return self._checkin
@@ -37,7 +37,6 @@ class User(dict):
     def admin(self) -> bool:
         return self._admin
 
-        
     @property
     def username(self):
         return self._username
@@ -53,17 +52,15 @@ class User(dict):
     @property
     def path(self) -> str:
         return self._path
-        
-    
+
     @path.setter
     def path(self, path: str) -> None:
         self._path = path
-    
+
     @property
     def name(self) -> str:
         return self._name
-        
-    
+
     @name.setter
     def name(self, name: str) -> None:
         self._name = name
@@ -92,10 +89,10 @@ class User(dict):
         """
         try:
             with open(self.path, 'w') as openFile:
-                json.dump(self.user, openFile, indent = 4, sort_keys = True)
+                json.dump(self.user, openFile, indent=4, sort_keys=True)
                 return True
         except OSError:
             raise Exception(f'update failed, username {self.username} does not exist')
 
     def updateWorklog(self) -> bool:
-        pass 
+        pass

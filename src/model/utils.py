@@ -1,6 +1,6 @@
+import platform
 from datetime import datetime
 from pathlib import Path
-import platform
 from random import choice
 from string import ascii_lowercase, ascii_uppercase
 
@@ -13,6 +13,7 @@ def rString(int: len = 8, lowercase: bool = True, uppercase: bool = True, digits
     for i in range(len):
         string += choice(f'{ascii_lowercase}{ascii_uppercase}{digits}')
     return string
+
 
 def now() -> dict:
     """
@@ -51,6 +52,8 @@ def now() -> dict:
         'month': months[date.month],
         'year': date.year
     }
+
+
 def getDBPath(dir: str) -> str:
     """
     Return the absolute path <dir> in data
@@ -65,8 +68,3 @@ def getDBPath(dir: str) -> str:
     projectIndex = dirPathList.index('catmostphere') + 1
     absPath = f'{slash}'.join(dirPathList[0:projectIndex])
     return f'{absPath}{slash}data{slash}{dir}{slash}'
-
-
-
-
-

@@ -1,12 +1,32 @@
 {
-    "item-1": {"price": 1},
-    "item-2": {"price": 2},
-    "item-3": {"price": 3},
-    "item-4": {"price": 4},
-    "item-5": {"price": 5},
-    "item-6": {"price": 6},
-    "item-7": {"price": 7},
-    "item-8": {"price": 8},
-    "item-9": {"price": 9},
-    "item-10": {"price": 10}
+  "Americano": {
+    "price": 4.5
+  },
+  "Cappuccino": {
+    "price": 4.5
+  },
+  "Matcha": {
+    "price": 4
+  },
+  "Latte": {
+    "price": 5
+  },
+  "Expresso": {
+    "price": 3.5
+  },
+  "Macchiato": {
+    "price": 5
+  },
+  "Green tea": {
+    "price": 2.5
+  },
+  "Iced tea": {
+    "price": 2.5
+  },
+  "Sunflower Seeds": {
+    "price": 2
+  },
+  "Black coffee": {
+    "price": 3
+  }
 }

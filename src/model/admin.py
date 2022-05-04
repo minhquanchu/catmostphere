@@ -1,4 +1,3 @@
-from model import user
 from model.user import User
 
 
